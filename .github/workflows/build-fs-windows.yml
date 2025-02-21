@@ -7,12 +7,12 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Make FS Server binaries
       run: |
         make -f Makefile.fs.windows dbcfsadm.exe dbcfs.exe dbcfsrun.exe
     - name: Artifact One
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: FSServerwindows
         path: |
@@ -27,7 +27,7 @@ jobs:
         mv fs/setupodb.exe .
         mv fs/setupodb64.exe .
     - name: Artifact Two
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: FSClientwindows
         path: |
